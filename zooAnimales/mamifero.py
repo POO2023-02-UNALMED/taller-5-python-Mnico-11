@@ -3,13 +3,13 @@ from zooAnimales.animal import Animal
 class Mamifero(Animal):
     caballos = 0
     leones = 0
-    _mamiferos = []
+    _listado = []
     
     def __init__(self, nombre, edad, habitat, genero, pelaje = False, patas = 0):
         super().__init__(nombre, edad, habitat, genero)
         self._pelaje = pelaje 
         self._patas = patas
-        self._mamiferos.append(self)
+        self._listado.append(self)
         
     def isPelaje(self):
         return self._pelaje
@@ -23,11 +23,11 @@ class Mamifero(Animal):
     def setPatas(self, patas):
         self._patas = patas
         
-    def getMamiferos(self):
-        return self._mamiferos
+    def getListado(self):
+        return self._listado
     
-    def setMamiferos(self, mamiferos):
-        self._mamiferos = mamiferos
+    def setListado(self, listado):
+        self._listado = listado
     
     @staticmethod
     def cantidadMamiferos():

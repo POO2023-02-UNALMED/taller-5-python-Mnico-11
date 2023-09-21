@@ -3,13 +3,13 @@ from zooAnimales.animal import Animal
 class Reptil(Animal):
     iguanas = 0
     serpientes = 0
-    _reptiles = []
+    _listado = []
     
     def __init__(self, nombre, edad, habitat, genero, colorEscamas = None, largoCola = None):
         super().__init__(nombre, edad, habitat, genero)
         self._colorEscamas = colorEscamas 
         self._largoCola = largoCola
-        self._reptiles.append(self)
+        self._listado.append(self)
         
     def getColorEscamas(self):
         return self._colorEscamas
@@ -23,14 +23,14 @@ class Reptil(Animal):
     def setLargoCola(self, largoCola):
         self._largoCola = largoCola
         
-    def getReptiles(self):
-        return self._reptiles
+    def getListado(self):
+        return self._listado
     
-    def setReptiles(self, reptiles):
-        self._reptiles = reptiles
+    def setListado(self, listado):
+        self._listado = listado
         
     def cantidadReptiles():
-        return len(Reptil._reptiles)
+        return len(Reptil._listado)
     
     @staticmethod
     def crearIguana(nombre, edad, genero):
