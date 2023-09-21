@@ -1,21 +1,11 @@
-from gestion import zoologico
-from zooAnimales.animal import Animal
+from gestion.zoologico import Zoologico
 
-class Zona():
-    def __init__(self, nombre=None, zoo=None):
+class Zona:
+    def __init__(self, nombre, zoo = None):
         self._nombre = nombre
-        self._zoo = zoo 
+        self._zoo = zoo
         self._animales = []
-          
-
-    def agregarAnimales(self, animal):
-        self._animales.append(animal)
-        animal.setZona(self)
-        Animal.sumarAnimal()
-
-    def cantidadAnimales(self):
-        return len(self._animales)
-
+        
     def getNombre(self):
         return self._nombre
     
@@ -27,9 +17,18 @@ class Zona():
     
     def setZoo(self, zoo):
         self._zoo = zoo
-
+        
     def getAnimales(self):
         return self._animales
     
-    def setAnimales(self, animal):
-        self._animels.append(animal)
+    def setAnimales(self, animales):
+        self._animales = animales
+        
+    def agregarAnimales(self, animal):
+        self._animales.append(animal)
+        
+    def cantidadAnimales(self):
+        cantidadAnimales = 0
+        for _ in self._animales:
+            cantidadAnimales += 1
+        return cantidadAnimales
